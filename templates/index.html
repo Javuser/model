@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Классификация текста</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+    <h2>Классификация текста</h2>
+    <form method="POST">
+        <div class="mb-3">
+            <textarea name="text" class="form-control" rows="4" placeholder="Введите текст..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Классифицировать</button>
+    </form>
+
+    {% if result %}
+    <div class="mt-4 alert alert-info">
+        <strong>Предсказанный класс:</strong> {{ result }} ({{ probability }}%)
+    </div>
+    {% endif %}
+</body>
+</html>
